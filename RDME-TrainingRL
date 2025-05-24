@@ -1,0 +1,29 @@
+# Problem Statement
+
+The CartPole problem is a classic control task in reinforcement learning. An agent must learn to balance a pole on a moving cart by taking actions to move the cart left or right. For every time step the pole stays balanced, the agent receives a reward of +1.
+
+The objective is to maximize the cumulative reward per episode, with a maximum score of 500. An agent that achieves an average score ≥ 475 over 100 episodes is considered to have solved the environment.
+
+## Algorithm: Deep Q-Network (DQN)
+
+This implementation uses a Deep Q-Network (DQN) to approximate the optimal action-value function Q(s, a) with a neural network. It includes:
+
+- Epsilon-Greedy Exploration
+- Experience Replay
+- Target Network
+- Neural Network-based Q-function approximation
+- Moving Average Performance Plotting
+- Live Environment Simulation after Training
+
+## Hyperparameters
+
+| Parameter        | Value        | Description |
+|------------------|--------------|-------------|
+| `gamma`          | `0.95`       | Discount factor for future rewards |
+| `epsilon`        | `1.0 → 0.01` | Exploration rate (decays each episode) |
+| `epsilon_decay`  | `0.999`      | Decay factor for epsilon |
+| `learning_rate`  | `0.005`      | Learning rate for the optimizer |
+| `batch_size`     | `64`         | Number of experiences used for training at each step |
+| `train_start`    | `1000`       | Training begins after collecting these many experiences |
+| `episodes`       | `1000`       | Total training episodes |
+| `replay_buffer`  | `2000`       | Maximum number of stored experiences |
